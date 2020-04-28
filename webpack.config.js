@@ -10,6 +10,7 @@ const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { 
 
 module.exports = {
     mode: env,
+    output: { publicPath: '/' },
     entry: ['./src'], // this is where our app lives
     devtool: 'source-map', // this enables debugging with source in chrome devtools
     module: {
@@ -97,9 +98,14 @@ module.exports = {
             template: './src/index.html',
             filename: './index.html',
         }),
+        new HtmlWebpackPlugin({ // tells webpack that we want it to know that we have a src/index.html file and we want it to be available as just index.html in our final product.
+            template: './src/index.html',
+            filename: './200.html',
+        }),
     ],
     devServer: {
         hot: true,
+        historyApiFallback: true,
     },
 };
 
