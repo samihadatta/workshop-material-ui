@@ -332,4 +332,5 @@ Pretty cool right?
 
 ## Resources
 
-* cite any resources
+* https://material-ui.com
+* https://material-ui.com/getting-started/templates/#react-templates
